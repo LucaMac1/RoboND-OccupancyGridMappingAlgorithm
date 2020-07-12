@@ -13,7 +13,7 @@ project(${PROJECT_NAME} VERSION 1.0 LANGUAGES CXX)
 if(MSVC)
   add_compile_options(/W3 /WX)
 else()
-  add_compile_options()-W -Wall -Werror)
+  add_compile_options(-W -Wall -Werror)
 endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
