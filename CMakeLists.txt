@@ -18,6 +18,10 @@ endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
+set(HEADER_FILES
+    src/
+)
+
 find_package(Python COMPONENTS Interpreter Development NumPy)  
 add_executable(${TARGET_NAME})
 target_include_directories(${TARGET_NAME} PRIVATE ${Python_INCLUDE_DIRS})
