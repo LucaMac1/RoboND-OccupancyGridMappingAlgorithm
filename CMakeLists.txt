@@ -18,7 +18,7 @@ endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-find_package(Python COMPONENTS Interpreter Development NumPy REQUIRED)
+find_package(Python COMPONENTS Interpreter Development NumPy)  
 add_executable(${TARGET_NAME})
-target_include_directories(${TARGET_NAME} PRIVATE ${PYTHON_INCLUDE_DIRS})
-target_link_libraries(${TARGET_NAME} PUBLIC Python::NumPy)
+target_include_directories(${TARGET_NAME} PRIVATE ${Python_INCLUDE_DIRS})
+target_link_libraries(${TARGET_NAME} PUBLIC Python::Interpreter Python::Interpreter Python::Development Python::NumPy)
