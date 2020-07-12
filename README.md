@@ -19,7 +19,7 @@ void visualization()
 Here are some helpful commands you can use to generate plots with the `matplotlib` library:
 * *Set Title*: `plt::title("Your Title");`
 * *Set Limits*: `plt::xlim(x-axis lower limit, x-axis upper limit );`
-* *Plot Data*:`plt::plot({ x-value }, { y-value }, "Color and Shape");`
+* *Plot Data*:`plt::plot({ x-value }, { y-value }, "Colour and Shape");`
 * *Save Plot*: `plt::save("File name and directory")`;
 * *Close Plot*:   `plt::clf()`;
 
@@ -31,7 +31,7 @@ $ cd /home/workspace/
 $ git clone https://github.com/udacity/RoboND-OccupancyGridMappingAlgorithm
 $ cd RoboND-OccupancyGridMappingAlgorithm/
 $ rm -rf Images/* #Delete the folder content and not the folder itself!
-$ g++ main.cpp -o app -std=c++11 -I/usr/include/python2.7 -lpython2.7    #TODO: use CMake for managing the build process of the source code
+$ g++ main.cpp -o app -std=c++11 -I/usr/include/python2.7 -lpython2.7 #TODO: use CMake for managing the build process of the source code
 
 $ mkdir build
 $ cd build
