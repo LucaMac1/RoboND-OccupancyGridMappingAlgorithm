@@ -7,7 +7,7 @@ set(DESCRIPTION "Occupancy Grid Map Algorithm aims to represent a map of the env
 set(AUTHOR "Luca Macchiusi <macchiusiluca@gmail.com>")
 set(PROJECT_URL "https://github.com/LucaMac1/RoboND-OccupancyGridMappingAlgorithm")
 
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.12...3.17)
 project(${PROJECT_NAME} VERSION 1.0 LANGUAGES CXX)
 
 if(MSVC)
