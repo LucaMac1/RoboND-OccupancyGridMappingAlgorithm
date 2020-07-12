@@ -19,10 +19,10 @@ endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(HEADER_FILES
-    src/
+    src/matplotlibcpp.h
 )
 
 find_package(Python COMPONENTS Interpreter Development NumPy)  
-add_executable(${TARGET_NAME})
+add_executable(${TARGET_NAME} ${HEADER_FILES})
 target_include_directories(${TARGET_NAME} PRIVATE ${Python_INCLUDE_DIRS})
 target_link_libraries(${TARGET_NAME} PUBLIC Python::Interpreter Python::Interpreter Python::Development Python::NumPy)
