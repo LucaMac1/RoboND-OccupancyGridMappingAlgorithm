@@ -1,10 +1,10 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
 # RoboND-OccupancyGridMappingAlgorithm
-You will visualize the mapped environment through the generated image
+You will visualise the mapped environment through the generated image
 
 ### Instruction
-Code the visualization function which will plot the state of each grid cell using the matplotlib python library
+Code the visualisation function which will plot the state of each grid cell using the matplotlib python library
 ``` C++
 void visualization()
 {
@@ -31,7 +31,12 @@ $ cd /home/workspace/
 $ git clone https://github.com/udacity/RoboND-OccupancyGridMappingAlgorithm
 $ cd RoboND-OccupancyGridMappingAlgorithm/
 $ rm -rf Images/* #Delete the folder content and not the folder itself!
-$ g++ main.cpp -o app -std=c++11 -I/usr/include/python2.7 -lpython2.7
+$ g++ main.cpp -o app -std=c++11 -I/usr/include/python2.7 -lpython2.7    #TODO: use CMake for managing the build process of the source code
+
+$ mkdir build
+$ cd build
+$ cmake -G Ninja ..
+$ ninja
 ```
 
 ### Running
