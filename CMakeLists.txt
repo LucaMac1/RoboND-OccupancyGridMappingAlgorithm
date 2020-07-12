@@ -16,12 +16,7 @@ else()
   add_compile_options(-W -Wall -Werror)
 endif()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-
-set(HEADER_FILES src/matplotlibcpp.h)
-
-#find_package(Python COMPONENTS Interpreter Development NumPy)
-find_package(Python2 COMPONENTS NumPy)
-add_executable(${TARGET_NAME} ${HEADER_FILES})
-target_include_directories(${TARGET_NAME} PRIVATE ${Python2_INCLUDE_DIRS})
-target_link_libraries(${TARGET_NAME} PUBLIC Python2::NumPy)
+set(SOURCE_FILES main.cpp)
+set(HEADER_FILES)
+add_subdirectory(${PROJECT_SOURCE_DIR}/src)
+add_executable(${TARGET_NAME} ${SOURCE_FILES} ${HEADER_FILES})
