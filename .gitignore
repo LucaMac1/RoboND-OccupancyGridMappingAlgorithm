@@ -1,1 +1,58 @@
+# <Project Name> GitIgnore
+# Created by https://www.gitignore.io/api/c++,cmake,emacs,intellij,linux,osx
 
+# Build -----------------------------------------------------------------------
+
+### Output and Cache Directories ###
+/External/
+/Debug/
+/Docs/
+/Release/
+/build/
+/build-*/
+/Build*/
+/bin/
+/out/
+/cmake-build-*/
+
+### CMake ###
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
+
+# Language --------------------------------------------------------------------
+
+### C++ ###
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Comment this line if you want to version Wavefront .obj files.
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
