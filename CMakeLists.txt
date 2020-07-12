@@ -1,6 +1,6 @@
 set(PROJECT_NAME "occupancy_grid_map")
 set(TEST_TARGET_NAME "occupancy_grid_map_tests")
-set(DESCRIPTION "Occupancy Grid Map Algorithm represents a map of the environment 
+set(DESCRIPTION "Occupancy Grid Map Algorithm aims to represent a map of the environment 
                  as an evenly spaced field of binary random variables each representing 
                  the presence of an obstacle at that location in the environment.")
 set(AUTHOR "Luca Macchiusi <macchiusiluca@gmail.com>")
