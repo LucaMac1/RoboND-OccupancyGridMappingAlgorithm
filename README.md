@@ -8,10 +8,10 @@ Code the visualisation function which will plot the state of each grid cell usin
 ``` C++
 void visualization()
 {
-    //TODO: Initialize a plot named Map of size 300x150
+    //TODO: Initialise a plot named Map of size 300x150
     
     //TODO: Loop over the log odds values of the cells and plot each cell state. 
-    //Unkown state: green color, occupied state: black color, and free state: red color 
+    //Unknown state: green colour, occupied state: black colour, and free state: red colour 
     
     //TODO: Save the image and close the plot 
 }
