@@ -6,7 +6,7 @@ You will visualise the mapped environment through the generated image
 ### Instruction
 Code the visualisation function which will plot the state of each grid cell using the matplotlib python library
 ``` C++
-void visualization()
+void visualisation()
 {
     //TODO: Initialise a plot named Map of size 300x150
     

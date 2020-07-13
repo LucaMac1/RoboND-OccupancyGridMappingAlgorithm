@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
-#include "src/matplotlibcpp.h" //Graph Library
+#include "matplotlibcpp.h" //Graph Library
 
 using namespace std;
 namespace plt = matplotlibcpp;
@@ -79,11 +79,11 @@ void occupancyGridMapping(double Robotx, double Roboty, double Robottheta, doubl
 void visualization()
 {
     //TODO: Initialize a plot named Map of size 300x150
-    
-    //TODO: Loop over the log odds values of the cells and plot each cell state. 
-    //Unkown state: green color, occupied state: black color, and free state: red color 
-    
-    //TODO: Save the image and close the plot 
+
+    //TODO: Loop over the log odds values of the cells and plot each cell state.
+    //Unkown state: green color, occupied state: black color, and free state: red color
+
+    //TODO: Save the image and close the plot
 }
 
 int main()
@@ -111,4 +111,3 @@ int main()
 
     return 0;
 }
-

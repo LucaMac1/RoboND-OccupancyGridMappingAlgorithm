@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
-#include "src/matplotlibcpp.h" //Graph Library
+#include "matplotlibcpp.h" //Graph Library
 
 using namespace std;
 namespace plt = matplotlibcpp;
@@ -14,7 +14,7 @@ double l0 = 0, locc = 0.4, lfree = -0.4;
 double gridWidth = 100, gridHeight = 100;
 // Map dimensions
 double mapWidth = 30000, mapHeight = 15000;
-// Robot size with respect to the map 
+// Robot size with respect to the map
 double robotXOffset = mapWidth / 5, robotYOffset = mapHeight / 3;
 // Defining an l vector to store the log odds values of each cell
 vector< vector<double> > l(mapWidth/gridWidth, vector<double>(mapHeight/gridHeight));
@@ -134,4 +134,3 @@ int main()
 
     return 0;
 }
-
