@@ -6,8 +6,6 @@ if(" ${CMAKE_SOURCE_DIR}" STREQUAL " ${CMAKE_BINARY_DIR}")
 endif()
 
 set(PROJECT_NAME "occupancy_grid_map")
-set(TARGET_NAME "exe_occupancy_grid_map")
-set(TEST_TARGET_NAME "occupancy_grid_map_tests")
 set(DESCRIPTION "Occupancy Grid Map Algorithm aims to represent a map of the environment
                  as an evenly spaced field of binary random variables each representing
                  the presence of an obstacle at that location in the environment.")
@@ -19,8 +17,5 @@ project(${PROJECT_NAME} VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES solution.cpp)
-set(HEADER_FILES)
 add_subdirectory(include)
-add_executable(${TARGET_NAME} ${SOURCE_FILES} ${HEADER_FILES})
-target_link_libraries(${TARGET_NAME} PRIVATE Matplotlibcpp)
+add_subdirectory(src)

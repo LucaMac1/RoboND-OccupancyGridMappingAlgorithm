@@ -105,7 +105,7 @@ void visualization()
     }
 
     //Save the image and close the plot
-    plt::save("./Images/Map.png");
+    plt::save("../images/occ_map.png");
     plt::clf();
 }
 
@@ -115,8 +115,8 @@ int main()
     double measurementData[8];
     double robotX, robotY, robotTheta;
 
-    FILE* posesFile = fopen("Data/poses.txt", "r");
-    FILE* measurementFile = fopen("Data/measurement.txt", "r");
+    FILE* posesFile = fopen("../data/poses.txt", "r"); 
+    FILE* measurementFile = fopen("../data/measurement.txt", "r");
 
     // Scanning the files and retrieving measurement and poses at each timestamp
     while (fscanf(posesFile, "%lf %lf %lf %lf", &timeStamp, &robotX, &robotY, &robotTheta) != EOF) {
