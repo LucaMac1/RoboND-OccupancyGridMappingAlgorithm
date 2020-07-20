@@ -1,7 +1,8 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include <vector>
 #include "matplotlibcpp.h" //Graph Library
+#include <fstream>
 
 using namespace std;
 namespace plt = matplotlibcpp;
@@ -29,6 +30,8 @@ double inverseSensorModel(double x, double y, double theta, double xi, double yi
     //******************Compute r and phi**********************//
     double r = sqrt(pow(xi - x, 2) + pow(yi - y, 2));
     double phi = atan2(yi - y, xi - x) - theta;
+
+    double l_result;
 
     //Scaling Measurement to [-90 -37.5 -22.5 -7.5 7.5 22.5 37.5 90]
     for (int i = 0; i < 8; i++)
@@ -65,16 +68,21 @@ double inverseSensorModel(double x, double y, double theta, double xi, double yi
     //******************Evaluate the three cases**********************//
     if (r > min((double)Zmax, Zk + alpha / 2) || fabs(phi - thetaK) > beta / 2 || Zk > Zmax || Zk < Zmin)
     {
-        return l0;
+        // return l0;
+        l_result = l0;
     }
     else if (Zk < Zmax && fabs(r - Zk) < alpha / 2)
     {
-        return locc;
+        // return locc;
+        l_result = locc;
     }
     else if (r <= Zk)
     {
-        return lfree;
+        //return lfree;
+        l_result = lfree;
     }
+
+    return l_result;
 }
 
 void occupancyGridMapping(double Robotx, double Roboty, double Robottheta, double sensorData[])
@@ -121,9 +129,9 @@ void visualization()
             }
         }
     }
-
+    cout << "Visualisation Done!" << endl;
     //Save the image and close the plot
-    plt::save("../images/occ_map.png");
+    plt::save("/home/luca/workspace/RoboND-OccupancyGridMappingAlgorithm/images/ex.png");
     plt::clf();
 }
 
@@ -133,24 +141,34 @@ int main()
     double measurementData[8];
     double robotX, robotY, robotTheta;
 
-    FILE *posesFile = fopen("../data/poses.txt", "r");
-    FILE *measurementFile = fopen("../data/measurement.txt", "r");
+    std::ifstream posesfile;
+    posesfile.open("/home/luca/workspace/RoboND-OccupancyGridMappingAlgorithm/data/poses.txt");
+
+    std::ifstream mesfile;
+    mesfile.open("/home/luca/workspace/RoboND-OccupancyGridMappingAlgorithm/data/measurement.txt");
 
     // Scanning the files and retrieving measurement and poses at each timestamp
-    while (fscanf(posesFile, "%lf %lf %lf %lf", &timeStamp, &robotX, &robotY, &robotTheta) != EOF)
+
+    while (posesfile >> timeStamp)
     {
-        fscanf(measurementFile, "%lf", &timeStamp);
+        posesfile >> robotX;
+        posesfile >> robotY;
+        posesfile >> robotTheta;
+
+        mesfile >> timeStamp;
         for (int i = 0; i < 8; i++)
-        {
-            fscanf(measurementFile, "%lf", &measurementData[i]);
-        }
-       occupancyGridMapping(robotX, robotY, (robotTheta / 10) * (M_PI / 180), measurementData);
+            mesfile >> measurementData[i];
+
+        occupancyGridMapping(robotX, robotY, (robotTheta / 10) * (M_PI / 180), measurementData);
     }
 
     // Visualize the map at the final step
     cout << "Wait for the image to generate" << endl;
     visualization();
     cout << "Done!" << endl;
+
+    posesfile.close();
+    mesfile.close();
 
     return EXIT_SUCCESS;
 }
