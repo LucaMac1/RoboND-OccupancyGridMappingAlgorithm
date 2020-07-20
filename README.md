@@ -39,6 +39,7 @@ $ ninja
 ```
 
 ### Running
+```sh
 $ src
 $ ./solution.exe
 ```
