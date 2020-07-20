@@ -31,7 +31,6 @@ $ cd /home/workspace/
 $ git clone https://github.com/udacity/RoboND-OccupancyGridMappingAlgorithm
 $ cd RoboND-OccupancyGridMappingAlgorithm/
 $ rm -rf Images/* #Delete the folder content and not the folder itself!
-$ g++ main.cpp -o app -std=c++11 -I/usr/include/python2.7 -lpython2.7 #TODO: use CMake for managing the build process of the source code
 
 $ mkdir build
 $ cd build
@@ -40,8 +39,8 @@ $ ninja
 ```
 
 ### Running
-```sh
-$ ./app
+$ src
+$ ./solution.exe
 ```
 
 Now, wait for the program to generate the map!
