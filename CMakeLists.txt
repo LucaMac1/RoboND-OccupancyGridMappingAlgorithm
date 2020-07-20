@@ -15,6 +15,15 @@ set(PROJECT_URL "https://github.com/LucaMac1/RoboND-OccupancyGridMappingAlgorith
 cmake_minimum_required(VERSION 3.12...3.17)
 project(${PROJECT_NAME} VERSION 1.0 LANGUAGES CXX)
 
+include(CMakePackageConfigHelpers)
+include(GNUInstallDirs)
+
+# Release by default
+# Turn on Debug with "-DCMAKE_BUILD_TYPE=Debug"
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif()
+
 set(CMAKE_CXX_STANDARD 11)
 
 add_subdirectory(include)
